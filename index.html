@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Antes de comprar — Tu decisión empieza con claridad</title>
+    <meta
+      name="description"
+      content="Nueve micropreguntas para reconocer lo que sabes y lo que necesitas aclarar antes de comprar un inmueble."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+      :root {
+        --ink: #173d35;
+        --green: #265d49;
+        --lime: #d6ec95;
+        --paper: #f5f5ef;
+        --muted: #69776d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          16px "DM Sans",
+          sans-serif;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      header {
+        height: 100px;
+        max-width: 1320px;
+        margin: auto;
+        padding: 0 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #dce1d6;
+      }
+      .brand {
+        font:
+          800 21px Manrope,
+          sans-serif;
+        letter-spacing: -1px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .mark {
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--green);
+        transform: rotate(-8deg);
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        font-size: 19px;
+      }
+      .tag {
+        font-size: 11px;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      main {
+        max-width: 1320px;
+        margin: auto;
+        padding: 58px 48px 40px;
+      }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--green);
+      }
+      h1 {
+        font:
+          500 clamp(42px, 5.5vw, 76px) / 1.08 Manrope,
+          sans-serif;
+        letter-spacing: -3.5px;
+        margin: 22px 0;
+      }
+      h1 em {
+        font-style: normal;
+        color: #598062;
+      }
+      p {
+        line-height: 1.7;
+        color: var(--muted);
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: 70px;
+        align-items: center;
+      }
+      .intro p {
+        max-width: 465px;
+        font-size: 17px;
+      }
+      .primary {
+        background: var(--green);
+        color: white;
+        border: 0;
+        border-radius: 8px;
+        padding: 18px 25px;
+        display: inline-flex;
+        gap: 40px;
+        align-items: center;
+        font-weight: 600;
+      }
+      .primary:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      .sub {
+        font-size: 12px;
+        margin-top: 16px;
+        color: var(--muted);
+      }
+      .scene {
+        height: 420px;
+        position: relative;
+        background: #e3e8d8;
+        border-radius: 180px 180px 16px 16px;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .house {
+        width: 235px;
+        height: 240px;
+        background: #ede7da;
+        position: relative;
+        box-shadow: 25px 15px 0 #c4cfb7;
+        margin-bottom: 0;
+      }
+      .house:before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 80px;
+        top: -80px;
+        left: 0;
+        background: #46715a;
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      }
+      .house:after {
+        content: "";
+        position: absolute;
+        left: 32px;
+        bottom: 0;
+        width: 70px;
+        height: 130px;
+        background: #537362;
+        box-shadow: 105px -50px 0 -14px #9baea0;
+      }
+      .sun {
+        position: absolute;
+        top: 48px;
+        right: 65px;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        background: #f3f0c7;
+      }
+      .tree {
+        position: absolute;
+        left: 22px;
+        bottom: 0;
+        width: 70px;
+        height: 160px;
+        background: #6d8c65;
+        border-radius: 70px 70px 0 0;
+      }
+      .floating {
+        position: absolute;
+        right: 18px;
+        bottom: 25px;
+        background: #fffefa;
+        padding: 18px 22px;
+        border-radius: 12px;
+        font-size: 13px;
+        box-shadow: 0 12px 40px #173d3510;
+        z-index: 1;
+      }
+      .floating b {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      .steps {
+        margin-top: 60px;
+        border-top: 1px solid #dce1d6;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding-top: 28px;
+      }
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .circle {
+        width: 34px;
+        height: 34px;
+        flex-shrink: 0;
+        border: 1px solid #b9c7b8;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 12px;
+      }
+      .step b {
+        font-size: 14px;
+      }
+      .step small {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      .done .circle {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+      .active .circle {
+        background: var(--lime);
+        border-color: var(--lime);
+      }
+      footer {
+        max-width: 1224px;
+        margin: 30px auto;
+        padding: 20px 0;
+        border-top: 1px solid #dce1d6;
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 11px;
+        gap: 20px;
+      }
+      footer span {
+        max-width: 700px;
+        line-height: 1.6;
+      }
+      .quiz {
+        max-width: 850px;
+        margin: 0 auto;
+      }
+      .topline {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .progress {
+        height: 4px;
+        background: #dfe5d9;
+        margin: 20px 0 46px;
+        border-radius: 5px;
+      }
+      .progress i {
+        display: block;
+        height: 100%;
+        background: var(--green);
+        transition: width 0.4s;
+      }
+      h2 {
+        font:
+          500 clamp(28px, 3.5vw, 43px) / 1.2 Manrope,
+          sans-serif;
+        letter-spacing: -1.4px;
+        margin: 18px 0;
+      }
+      .hint {
+        font-size: 15px;
+        max-width: 630px;
+        min-height: 52px;
+      }
+      .scale {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        margin: 35px 0 10px;
+      }
+      .rating {
+        height: 76px;
+        background: transparent;
+        border: 1px solid #bfcbbd;
+        border-radius: 10px;
+        font:
+          500 27px Manrope,
+          sans-serif;
+        color: var(--ink);
+      }
+      .rating:hover {
+        background: #e6eddb;
+      }
+      .rating[aria-pressed="true"] {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+      .labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .actions {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .back {
+        background: none;
+        border: 0;
+        color: var(--muted);
+        padding: 15px 0;
+      }
+      .notice {
+        background: #e9eee1;
+        border-radius: 12px;
+        padding: 16px 20px;
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .result {
+        max-width: 850px;
+        margin: auto;
+      }
+      .result h1 {
+        font-size: 49px;
+        letter-spacing: -2px;
+      }
+      .pill {
+        display: inline-block;
+        padding: 8px 12px;
+        background: var(--lime);
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .review {
+        margin: 28px 0;
+      }
+      .review article {
+        padding: 20px 0;
+        border-bottom: 1px solid #dce1d6;
+        display: flex;
+        gap: 18px;
+      }
+      .review article b {
+        display: block;
+        margin-bottom: 6px;
+      }
+      .review article p {
+        font-size: 14px;
+        margin: 0;
+      }
+      .badge {
+        font-size: 12px;
+        white-space: nowrap;
+        color: var(--green);
+        padding-top: 3px;
+      }
+      button:focus-visible {
+        outline: 3px solid #a2bb58;
+        outline-offset: 4px;
+      }
+      .complete {
+        text-align: center;
+        max-width: 650px;
+        margin: 45px auto;
+      }
+      .complete .bigcheck {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--lime);
+        display: grid;
+        place-items: center;
+        font-size: 38px;
+        margin: 0 auto 25px;
+      }
+      @media (max-width: 720px) {
+        header {
+          height: 80px;
+          padding: 0 22px;
+        }
+        .tag {
+          display: none;
+        }
+        main {
+          padding: 36px 22px;
+        }
+        .intro {
+          grid-template-columns: 1fr;
+          gap: 35px;
+        }
+        h1 {
+          letter-spacing: -2px;
+        }
+        .scene {
+          height: 280px;
+          border-radius: 130px 130px 14px 14px;
+        }
+        .house {
+          height: 150px;
+          width: 190px;
+        }
+        .house:after {
+          height: 100px;
+        }
+        .steps {
+          gap: 18px;
+          margin-top: 35px;
+          grid-template-columns: 1fr;
+        }
+        .step small {
+          display: inline;
+          margin-left: 8px;
+        }
+        .scale {
+          gap: 7px;
+        }
+        .rating {
+          height: 60px;
+        }
+        .progress {
+          margin-bottom: 30px;
+        }
+        footer {
+          margin: 10px 22px;
+          flex-direction: column;
+        }
+        .result h1 {
+          font-size: 38px;
+        }
+        .review article {
+          gap: 10px;
+        }
+        .badge {
+          white-space: normal;
+          min-width: 67px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark" aria-hidden="true">⌂</span>
+        antes de comprar
+        <span style="color: #89a279">.</span>
+      </div>
+      <span class="tag">Una decisión más consciente</span>
+    </header>
+    <main id="app"></main>
+    <footer>
+      <span>
+        Prototipo educativo · Tus respuestas expresan tu percepción. Esta guía
+        no verifica documentos ni determina la conveniencia legal o financiera
+        de una compra.
+      </span>
+      <span>9 micropreguntas. Un siguiente paso más claro.</span>
+    </footer>
+    <script>
+      const groups = [
+        {
+          title: "¿Entiendo lo que voy a comprar?",
+          short: "Conoce el inmueble",
+          questions: [
+            [
+              "Tengo claro qué incluye el inmueble.",
+              "Piensa en sus características, espacios y lo que recibirías al comprar.",
+              "Pide una descripción por escrito de lo que incluye y excluye la compra.",
+            ],
+            [
+              "Sé qué servicios están disponibles hoy.",
+              "Distingue lo que ya existe de lo que todavía se ofrece como promesa.",
+              "Confirma qué servicios funcionan hoy y cuáles siguen pendientes.",
+            ],
+            [
+              "Sé si el inmueble responde a mis necesidades.",
+              "Considera el uso que le darías, su ubicación y tus prioridades.",
+              "Compara el inmueble con tus necesidades y prioridades reales.",
+            ],
+          ],
+        },
+        {
+          title: "¿Tengo información para respaldar mi decisión?",
+          short: "Confirma la información",
+          questions: [
+            [
+              "Sé qué documentos respaldan la propiedad.",
+              "Considera si puedes identificar los documentos y quién puede revisarlos.",
+              "Solicita la documentación de propiedad y su revisión profesional.",
+            ],
+            [
+              "Distingo lo confirmado de lo prometido.",
+              "Piensa en las fechas, características y compromisos que te han comunicado.",
+              "Pide que cada promesa relevante tenga un respaldo por escrito.",
+            ],
+            [
+              "Tengo claro el costo total de la compra.",
+              "Incluye los gastos adicionales al precio anunciado y los compromisos de pago.",
+              "Solicita un desglose completo de precio, gastos y pagos.",
+            ],
+          ],
+        },
+        {
+          title: "¿Sé qué necesito aclarar antes de decidir?",
+          short: "Prepara tu siguiente paso",
+          questions: [
+            [
+              "Sé qué dudas me falta resolver.",
+              "Piensa si puedes nombrar la información que todavía necesitas.",
+              "Escribe tus dudas y ordénalas por importancia.",
+            ],
+            [
+              "Sé quién debe responder cada duda.",
+              "Identifica a la persona o profesional que puede confirmar cada dato.",
+              "Asigna a cada duda una persona que pueda responderla con evidencia.",
+            ],
+            [
+              "Tengo claro qué necesito confirmar antes de comprometerme.",
+              "Piensa en las condiciones que deben cumplirse antes de firmar o entregar dinero.",
+              "Define qué necesitas comprobar antes de asumir un compromiso.",
+            ],
+          ],
+        },
+      ];
+      let answers = Array(9).fill(null),
+        index = 0,
+        screen = "intro";
+      const app = document.querySelector("#app");
+      function checklist(completed = 0) {
+        return `<div class="steps" aria-label="Tu checklist">${groups.map((g, i) => `<div class="step ${i < completed ? "done" : i === completed ? "active" : ""}"><span class="circle">${i < completed ? "✓" : String(i + 1).padStart(2, "0")}</span><div><b>${g.short}</b><small>${i < completed ? "Completado" : i === completed ? "En curso" : "Por explorar"}</small></div></div>`).join("")}</div>`;
+      }
+      function render() {
+        if (screen === "intro") {
+          app.innerHTML = `<section class="intro"><div><span class="eyebrow">Tu patrimonio empieza con una buena pregunta</span><h1>Antes de comprar,<br><em>date claridad.</em></h1><p>Comprar un inmueble es una gran decisión. Descubre qué tienes claro y qué necesitas preguntar antes de dar el siguiente paso.</p><button class="primary" id="start">Comenzar mi recorrido <span>↗</span></button><div class="sub">3 temas · 9 micropreguntas · A tu ritmo</div></div><div class="scene" role="img" aria-label="Ilustración de una casa en tonos verdes"><div class="sun"></div><div class="tree"></div><div class="house"></div><div class="floating"><b>La claridad también se construye.</b>Una pregunta a la vez.</div></div></section>${checklist(-1)}`;
+          document.querySelector("#start").onclick = () => {
+            screen = "question";
+            render();
+          };
+          return;
+        }
+        if (screen === "question") {
+          const g = Math.floor(index / 3),
+            q = groups[g].questions[index % 3];
+          app.innerHTML = `<section class="quiz"><div class="topline"><span class="eyebrow">${groups[g].short}</span><span class="sub">${index + 1} de 9</span></div><div class="progress" role="progressbar" aria-label="Preguntas respondidas" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${index}"><i style="width:${(index / 9) * 100}%"></i></div><span class="eyebrow">Tema ${g + 1} / 3 · Micropregunta ${(index % 3) + 1}</span><h2>${q[0]}</h2><p class="hint">${q[1]}</p><div class="scale" role="group" aria-label="¿Qué tan de acuerdo estás?">${Array.from({ length: 6 }, (_, n) => `<button class="rating" data-n="${n}" aria-pressed="${answers[index] === n}" aria-label="${n}: ${["Muy en desacuerdo", "En desacuerdo", "Algo en desacuerdo", "Algo de acuerdo", "De acuerdo", "Muy de acuerdo"][n]}">${n}</button>`).join("")}</div><div class="labels"><span>0 · Muy en desacuerdo</span><span>5 · Muy de acuerdo</span></div><div class="actions"><button class="back" id="back">← Anterior</button><button class="primary" id="next" ${answers[index] === null ? "disabled" : ""}>${index % 3 === 2 ? "Completar tema" : "Continuar"} <span>→</span></button></div>${checklist(g)}</section>`;
+          document.querySelectorAll("[data-n]").forEach(
+            (b) =>
+              (b.onclick = () => {
+                answers[index] = Number(b.dataset.n);
+                render();
+              }),
+          );
+          document.querySelector("#back").onclick = () => {
+            if (index > 0) index--;
+            else screen = "intro";
+            render();
+          };
+          document.querySelector("#next").onclick = () => {
+            if (index % 3 === 2) screen = "complete";
+            else index++;
+            render();
+            window.scrollTo(0, 0);
+          };
+          return;
+        }
+        if (screen === "complete") {
+          const g = Math.floor(index / 3);
+          app.innerHTML = `<section class="complete"><div class="bigcheck" aria-hidden="true">✓</div><span class="eyebrow">Tema ${g + 1} completado</span><h2>${groups[g].title}</h2><p>Ya reflexionaste sobre este tema. La marca indica que lo completaste; tus respuestas nos ayudarán a identificar lo que falta aclarar.</p><button class="primary" id="continue">${g === 2 ? "Ver mi resultado" : "Pasar al siguiente tema"} <span>→</span></button></section>${checklist(g + 1)}`;
+          document.querySelector("#continue").onclick = () => {
+            if (index === 8) screen = "result";
+            else {
+              index++;
+              screen = "question";
+            }
+            render();
+            window.scrollTo(0, 0);
+          };
+          return;
+        }
+        const ready = answers.every((x) => x >= 4),
+          pending = answers.filter((x) => x < 4).length;
+        app.innerHTML = `<section class="result"><span class="pill">Tu punto de partida</span><h1>${ready ? "Te percibes preparado para dar el siguiente paso." : "Aún necesitas aclarar información antes de decidir."}</h1><p>${ready ? "Tus respuestas muestran claridad en los tres temas. El siguiente paso es contrastar esa confianza con documentos y una revisión profesional." : "Identificaste " + pending + " aspecto" + (pending === 1 ? "" : "s") + " que conviene revisar. Usa esta lista para avanzar con preguntas concretas."}</p><div class="notice"><b>¿Cómo interpretar tu resultado?</b><br>En este prototipo, una respuesta menor a 4 señala un aspecto por aclarar. Este criterio es orientativo y no ha sido validado. Una autoevaluación no puede determinar por sí sola si eres capaz de comprar o si un inmueble es una buena inversión.</div><div class="review">${groups
+          .map(
+            (g, i) =>
+              `<article><span class="badge">${answers.slice(i * 3, i * 3 + 3).every((v) => v >= 4) ? "✓ Con claridad" : "↗ Por aclarar"}</span><div><b>${g.short}</b><p>${
+                g.questions
+                  .filter((q, j) => answers[i * 3 + j] < 4)
+                  .map((q) => q[2])
+                  .join(" ") ||
+                "Contrasta tus respuestas con información verificable antes de comprometerte."
+              }</p></div></article>`,
+          )
+          .join(
+            "",
+          )}</div><div class="actions"><button class="back" id="edit">← Revisar mis respuestas</button><button class="primary" id="restart">Volver a empezar <span>↻</span></button></div></section>`;
+        document.querySelector("#edit").onclick = () => {
+          index = 0;
+          screen = "question";
+          render();
+        };
+        document.querySelector("#restart").onclick = () => {
+          answers = Array(9).fill(null);
+          index = 0;
+          screen = "intro";
+          render();
+        };
+      }
+      render();
+    </script>
+  </body>
+</html>
