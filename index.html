@@ -11,11 +11,11 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
       :root {
-        --ink: #173d35;
-        --green: #265d49;
-        --lime: #d6ec95;
-        --paper: #f5f5ef;
-        --muted: #69776d;
+        --ink: #152f3e;
+        --accent: #007f93;
+        --accent-soft: #dceff2;
+        --paper: #ffffff;
+        --muted: #566772;
       }
       * {
         box-sizing: border-box;
@@ -40,7 +40,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid #dce1d6;
+        border-bottom: 1px solid #dce3e7;
       }
       .brand {
         font:
@@ -54,7 +54,7 @@
       .mark {
         width: 30px;
         height: 30px;
-        border: 2px solid var(--green);
+        border: 2px solid var(--accent);
         transform: rotate(-8deg);
         border-radius: 8px;
         display: grid;
@@ -77,7 +77,7 @@
         letter-spacing: 2px;
         text-transform: uppercase;
         font-weight: 700;
-        color: var(--green);
+        color: var(--accent);
       }
       h1 {
         font:
@@ -88,7 +88,7 @@
       }
       h1 em {
         font-style: normal;
-        color: #598062;
+        color: #008da5;
       }
       p {
         line-height: 1.7;
@@ -105,7 +105,7 @@
         font-size: 17px;
       }
       .primary {
-        background: var(--green);
+        background: var(--ink);
         color: white;
         border: 0;
         border-radius: 8px;
@@ -127,7 +127,7 @@
       .scene {
         height: 420px;
         position: relative;
-        background: #e3e8d8;
+        background: #e8f2f5;
         border-radius: 180px 180px 16px 16px;
         overflow: hidden;
         display: flex;
@@ -137,9 +137,9 @@
       .house {
         width: 235px;
         height: 240px;
-        background: #ede7da;
+        background: #f1f5f7;
         position: relative;
-        box-shadow: 25px 15px 0 #c4cfb7;
+        box-shadow: 25px 15px 0 #b9cdd6;
         margin-bottom: 0;
       }
       .house:before {
@@ -149,7 +149,7 @@
         height: 80px;
         top: -80px;
         left: 0;
-        background: #46715a;
+        background: #152f3e;
         clip-path: polygon(0 100%, 100% 0, 100% 100%);
       }
       .house:after {
@@ -159,8 +159,8 @@
         bottom: 0;
         width: 70px;
         height: 130px;
-        background: #537362;
-        box-shadow: 105px -50px 0 -14px #9baea0;
+        background: #008da5;
+        box-shadow: 105px -50px 0 -14px #8aabb9;
       }
       .sun {
         position: absolute;
@@ -169,7 +169,7 @@
         width: 68px;
         height: 68px;
         border-radius: 50%;
-        background: #f3f0c7;
+        background: #c9e9ee;
       }
       .tree {
         position: absolute;
@@ -177,18 +177,18 @@
         bottom: 0;
         width: 70px;
         height: 160px;
-        background: #6d8c65;
+        background: #5a8c9c;
         border-radius: 70px 70px 0 0;
       }
       .floating {
         position: absolute;
         right: 18px;
         bottom: 25px;
-        background: #fffefa;
+        background: #ffffff;
         padding: 18px 22px;
         border-radius: 12px;
         font-size: 13px;
-        box-shadow: 0 12px 40px #173d3510;
+        box-shadow: 0 12px 40px #152f3e10;
         z-index: 1;
       }
       .floating b {
@@ -198,7 +198,7 @@
       }
       .steps {
         margin-top: 60px;
-        border-top: 1px solid #dce1d6;
+        border-top: 1px solid #dce3e7;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
@@ -213,7 +213,7 @@
         width: 34px;
         height: 34px;
         flex-shrink: 0;
-        border: 1px solid #b9c7b8;
+        border: 1px solid #b5c7cf;
         border-radius: 50%;
         display: grid;
         place-items: center;
@@ -229,19 +229,27 @@
         margin-top: 5px;
       }
       .done .circle {
-        background: var(--green);
+        background: var(--accent);
         color: white;
-        border-color: var(--green);
+        border-color: var(--accent);
       }
+      .needs-review .circle,
+      .complete .bigcheck.needs-review {
+        background: #806000;
+        color: #fff3a6;
+        border-color: #806000;
+      }
+      .needs-review small { color: #8a6500; }
+      .review-flag { color: #8a6500; font-weight: 600; }
       .active .circle {
-        background: var(--lime);
-        border-color: var(--lime);
+        background: var(--accent-soft);
+        border-color: var(--accent-soft);
       }
       footer {
         max-width: 1224px;
         margin: 30px auto;
         padding: 20px 0;
-        border-top: 1px solid #dce1d6;
+        border-top: 1px solid #dce3e7;
         display: flex;
         justify-content: space-between;
         color: var(--muted);
@@ -263,14 +271,14 @@
       }
       .progress {
         height: 4px;
-        background: #dfe5d9;
+        background: #e0e9ed;
         margin: 20px 0 46px;
         border-radius: 5px;
       }
       .progress i {
         display: block;
         height: 100%;
-        background: var(--green);
+        background: var(--accent);
         transition: width 0.4s;
       }
       h2 {
@@ -294,7 +302,7 @@
       .rating {
         height: 76px;
         background: transparent;
-        border: 1px solid #bfcbbd;
+        border: 1px solid #b9c9d1;
         border-radius: 10px;
         font:
           500 27px Manrope,
@@ -302,12 +310,12 @@
         color: var(--ink);
       }
       .rating:hover {
-        background: #e6eddb;
+        background: #edf6f8;
       }
       .rating[aria-pressed="true"] {
-        background: var(--green);
+        background: var(--accent);
         color: white;
-        border-color: var(--green);
+        border-color: var(--accent);
       }
       .labels {
         display: flex;
@@ -328,7 +336,7 @@
         padding: 15px 0;
       }
       .notice {
-        background: #e9eee1;
+        background: #edf5f7;
         border-radius: 12px;
         padding: 16px 20px;
         font-size: 13px;
@@ -346,7 +354,7 @@
       .pill {
         display: inline-block;
         padding: 8px 12px;
-        background: var(--lime);
+        background: var(--accent-soft);
         border-radius: 30px;
         font-size: 12px;
         font-weight: 600;
@@ -356,7 +364,7 @@
       }
       .review article {
         padding: 20px 0;
-        border-bottom: 1px solid #dce1d6;
+        border-bottom: 1px solid #dce3e7;
         display: flex;
         gap: 18px;
       }
@@ -371,11 +379,11 @@
       .badge {
         font-size: 12px;
         white-space: nowrap;
-        color: var(--green);
+        color: var(--accent);
         padding-top: 3px;
       }
       button:focus-visible {
-        outline: 3px solid #a2bb58;
+        outline: 3px solid #008da5;
         outline-offset: 4px;
       }
       .complete {
@@ -387,11 +395,44 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background: var(--lime);
+        background: var(--accent-soft);
         display: grid;
         place-items: center;
         font-size: 38px;
         margin: 0 auto 25px;
+      }
+      .checklist-title {
+        margin: 40px 0 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .steps {
+        margin-top: 18px;
+      }
+      .step {
+        align-items: flex-start;
+      }
+      .step b {
+        line-height: 1.6;
+      }
+      .review h3 {
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+      .review ul {
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 14px;
+      }
+      .reflection {
+        background: #edf5f7;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 18px !important;
+      }
+      .reflection b {
+        color: var(--ink);
       }
       @media (max-width: 720px) {
         header {
@@ -461,8 +502,8 @@
     <header>
       <div class="brand">
         <span class="mark" aria-hidden="true">⌂</span>
-        antes de comprar
-        <span style="color: #89a279">.</span>
+        Antes de comprar
+        <span style="color: #008da5">.</span>
       </div>
       <span class="tag">Una decisión más consciente</span>
     </header>
@@ -545,12 +586,76 @@
         index = 0,
         screen = "intro";
       const app = document.querySelector("#app");
-      function checklist(completed = 0) {
-        return `<div class="steps" aria-label="Tu checklist">${groups.map((g, i) => `<div class="step ${i < completed ? "done" : i === completed ? "active" : ""}"><span class="circle">${i < completed ? "✓" : String(i + 1).padStart(2, "0")}</span><div><b>${g.short}</b><small>${i < completed ? "Completado" : i === completed ? "En curso" : "Por explorar"}</small></div></div>`).join("")}</div>`;
+      const completedGroups = new Set();
+      // Regla orientativa del prototipo: dos preguntas de mayor peso y una de apoyo.
+      const questionWeights = [0.4, 0.4, 0.2];
+      const passingScore = 3.2;
+      function groupPasses(groupIndex) {
+        const scores = answers.slice(groupIndex * 3, groupIndex * 3 + 3);
+        return scores.every(value => value !== null) &&
+          scores.reduce((total, value, j) => total + value * questionWeights[j], 0)
+            >= passingScore - 1e-9;
+      }
+      function checklist() {
+        const current = screen === "question" ? Math.floor(index / 3) : -1;
+        return `
+          <section aria-label="Checklist de preguntas principales">
+            <h3 class="checklist-title">Tus tres preguntas principales</h3>
+            <div class="steps">
+              ${groups
+                .map((group, i) => {
+                  const done = completedGroups.has(i);
+                  const review = done && !groupPasses(i);
+                  const active = !done && current === i;
+                  const count = answers
+                    .slice(i * 3, i * 3 + 3)
+                    .filter((value) => value !== null).length;
+                  return `
+                  <div class="step ${review ? "needs-review" : done ? "done" : active ? "active" : ""}">
+                    <span class="circle" aria-hidden="true">${review ? "−" : done ? "✓" : i + 1}</span>
+                    <div>
+                      <b>${group.title}</b>
+                      <small>${review ? "Conviene revisar · 3 de 3" : done ? "Completada · 3 de 3" : count ? `${count} de 3 respondidas` : "Por explorar"}</small>
+                    </div>
+                  </div>`;
+                })
+                .join("")}
+            </div>
+          </section>`;
+      }
+      function feedback() {
+        return groups
+          .map((group, i) => {
+            const scores = answers.slice(i * 3, i * 3 + 3);
+            const passed = groupPasses(i);
+            const pending = group.questions.filter(
+              (question, j) => scores[j] < 4,
+            );
+            const reflections = [
+              "¿Qué característica del inmueble es indispensable para ti y cómo sabes que está incluida?",
+              "¿Qué parte de tu confianza se apoya en información que puedes comprobar?",
+              "¿Qué duda resolverías primero para sentir mayor claridad al decidir?",
+            ];
+            return `
+            <article>
+              <span class="badge ${!passed ? "review-flag" : ""}">${passed ? "✓ Criterio alcanzado" : "− Conviene revisar"}</span>
+              <div>
+                <h3>${group.title}</h3>
+                <p>${
+                  pending.length
+                    ? ` ${passed ? "Alcanzaste el criterio ponderado del grupo. Aun así," : "Antes de avanzar,"} conviene revisar ${pending.length} aspecto${pending.length === 1 ? "" : "s"} donde expresaste menor seguridad:`
+                    : "Expresaste confianza en las tres respuestas de este tema. Piensa qué información concreta respalda esa seguridad."
+                }</p>
+                ${pending.length ? `<ul>${pending.map((question) => `<li>${question[2]}</li>`).join("")}</ul>` : ""}
+                <p class="reflection"><b>Para reflexionar</b>${reflections[i]}</p>
+              </div>
+            </article>`;
+          })
+          .join("");
       }
       function render() {
         if (screen === "intro") {
-          app.innerHTML = `<section class="intro"><div><span class="eyebrow">Tu patrimonio empieza con una buena pregunta</span><h1>Antes de comprar,<br><em>date claridad.</em></h1><p>Comprar un inmueble es una gran decisión. Descubre qué tienes claro y qué necesitas preguntar antes de dar el siguiente paso.</p><button class="primary" id="start">Comenzar mi recorrido <span>↗</span></button><div class="sub">3 temas · 9 micropreguntas · A tu ritmo</div></div><div class="scene" role="img" aria-label="Ilustración de una casa en tonos verdes"><div class="sun"></div><div class="tree"></div><div class="house"></div><div class="floating"><b>La claridad también se construye.</b>Una pregunta a la vez.</div></div></section>${checklist(-1)}`;
+          app.innerHTML = `<section class="intro"><div><span class="eyebrow">Tu patrimonio empieza con una buena pregunta</span><h1>Antes de comprar,<br><em>date claridad.</em></h1><p>Comprar un inmueble es una gran decisión. Descubre qué tienes claro y qué necesitas preguntar antes de dar el siguiente paso.</p><button class="primary" id="start">Comenzar mi recorrido <span>↗</span></button><div class="sub">3 temas · 9 micropreguntas · A tu ritmo</div></div><div class="scene" role="img" aria-label="Ilustración de una casa en tonos azul marino y turquesa"><div class="sun"></div><div class="tree"></div><div class="house"></div><div class="floating"><b>La claridad también se construye.</b>Una pregunta a la vez.</div></div></section>${checklist(-1)}`;
           document.querySelector("#start").onclick = () => {
             screen = "question";
             render();
@@ -574,8 +679,10 @@
             render();
           };
           document.querySelector("#next").onclick = () => {
-            if (index % 3 === 2) screen = "complete";
-            else index++;
+            if (index % 3 === 2) {
+              completedGroups.add(Math.floor(index / 3));
+              screen = "complete";
+            } else index++;
             render();
             window.scrollTo(0, 0);
           };
@@ -583,7 +690,8 @@
         }
         if (screen === "complete") {
           const g = Math.floor(index / 3);
-          app.innerHTML = `<section class="complete"><div class="bigcheck" aria-hidden="true">✓</div><span class="eyebrow">Tema ${g + 1} completado</span><h2>${groups[g].title}</h2><p>Ya reflexionaste sobre este tema. La marca indica que lo completaste; tus respuestas nos ayudarán a identificar lo que falta aclarar.</p><button class="primary" id="continue">${g === 2 ? "Ver mi resultado" : "Pasar al siguiente tema"} <span>→</span></button></section>${checklist(g + 1)}`;
+          const review = !groupPasses(g);
+          app.innerHTML = `<section class="complete"><div class="bigcheck ${review ? "needs-review" : ""}" aria-hidden="true">${review ? "−" : "✓"}</div><span class="eyebrow">Tema ${g + 1} completado</span><h2>${groups[g].title}</h2><p>${review ? "El resultado ponderado indica que conviene revisar este tema. Al final verás los aspectos concretos por aclarar." : "Alcanzaste el criterio ponderado de este tema. El checkmark puede coexistir con dudas puntuales: al final verás cuáles conviene revisar."}</p><button class="primary" id="continue">${g === 2 ? "Ver mi resultado" : "Pasar al siguiente tema"} <span>→</span></button></section>${checklist(g + 1)}`;
           document.querySelector("#continue").onclick = () => {
             if (index === 8) screen = "result";
             else {
@@ -595,22 +703,9 @@
           };
           return;
         }
-        const ready = answers.every((x) => x >= 4),
+        const ready = groups.every((group, i) => groupPasses(i)),
           pending = answers.filter((x) => x < 4).length;
-        app.innerHTML = `<section class="result"><span class="pill">Tu punto de partida</span><h1>${ready ? "Te percibes preparado para dar el siguiente paso." : "Aún necesitas aclarar información antes de decidir."}</h1><p>${ready ? "Tus respuestas muestran claridad en los tres temas. El siguiente paso es contrastar esa confianza con documentos y una revisión profesional." : "Identificaste " + pending + " aspecto" + (pending === 1 ? "" : "s") + " que conviene revisar. Usa esta lista para avanzar con preguntas concretas."}</p><div class="notice"><b>¿Cómo interpretar tu resultado?</b><br>En este prototipo, una respuesta menor a 4 señala un aspecto por aclarar. Este criterio es orientativo y no ha sido validado. Una autoevaluación no puede determinar por sí sola si eres capaz de comprar o si un inmueble es una buena inversión.</div><div class="review">${groups
-          .map(
-            (g, i) =>
-              `<article><span class="badge">${answers.slice(i * 3, i * 3 + 3).every((v) => v >= 4) ? "✓ Con claridad" : "↗ Por aclarar"}</span><div><b>${g.short}</b><p>${
-                g.questions
-                  .filter((q, j) => answers[i * 3 + j] < 4)
-                  .map((q) => q[2])
-                  .join(" ") ||
-                "Contrasta tus respuestas con información verificable antes de comprometerte."
-              }</p></div></article>`,
-          )
-          .join(
-            "",
-          )}</div><div class="actions"><button class="back" id="edit">← Revisar mis respuestas</button><button class="primary" id="restart">Volver a empezar <span>↻</span></button></div></section>`;
+        app.innerHTML = `<section class="result"><span class="pill">Tu punto de partida</span><h1>${ready ? "Te percibes preparado para dar el siguiente paso." : "Aún necesitas aclarar información antes de decidir."}</h1><p>${ready ? "Alcanzaste el criterio ponderado en los tres temas. Revisa las dudas puntuales señaladas y contrasta tu confianza con documentos y una revisión profesional." : "Identificaste " + pending + " aspecto" + (pending === 1 ? "" : "s") + " que conviene revisar. Usa esta lista para avanzar con preguntas concretas."}</p><div class="notice"><b>¿Cómo interpretar tu resultado?</b><br>En cada grupo, las dos primeras micropreguntas pesan 40 % cada una y la tercera 20 %. El checkmark requiere un promedio ponderado de al menos 3.2 sobre 5. Una respuesta menor a 4 sigue apareciendo como pendiente, aunque el grupo alcance ese criterio. Este criterio es orientativo y no ha sido validado. Una autoevaluación no puede determinar por sí sola si eres capaz de comprar o si un inmueble es una buena inversión.</div>${checklist()}<h2>Reflexiones y retroalimentación</h2><p>No necesitas resolver todo hoy. Elige un pendiente, busca una respuesta verificable y vuelve a revisar cómo te sientes al decidir.</p><div class="review">${feedback()}</div><div class="actions"><button class="back" id="edit">← Revisar mis respuestas</button><button class="primary" id="restart">Volver a empezar <span>↻</span></button></div></section>`;
         document.querySelector("#edit").onclick = () => {
           index = 0;
           screen = "question";
@@ -618,6 +713,7 @@
         };
         document.querySelector("#restart").onclick = () => {
           answers = Array(9).fill(null);
+          completedGroups.clear();
           index = 0;
           screen = "intro";
           render();
